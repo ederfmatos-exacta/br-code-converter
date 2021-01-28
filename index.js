@@ -24,9 +24,10 @@ const keys = {
 
 button.addEventListener("click", () => {
   const qrCode = qrcodeInput.value;
+  if (!qrCode) return;
+
   const content = convert(qrCode, 0, {}, {}, false);
 
-  console.log(content);
   merchantContent.innerHTML = "";
 
   const parsedQrCode = Object.keys(keys)
